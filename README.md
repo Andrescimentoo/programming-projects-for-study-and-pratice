@@ -20,3 +20,16 @@ Pois bem, como dito, os frameworks e bibliotecas representarão os planetas que 
 
 Já as bibliotecas e frameworks do front representam os planetas gasosos: mais leves e maiores em âmbito externo.
 Portanto, é dessa maneira que arquitetei minha área de estudo: para que, assim como todos podemos ver, observar e analisar o universo, vocês vejam e analisem também meus estudos e meu aprendizado expansivo ao longo dos anos.
+
+* Os commits desse projeto foram pre-estruturados para melhor organização e clareza tendo em vista que este repositório sofrerá contínua expansão.
+
+commits a respeito de:
+
+1- Anotações de conhecimento e registro escrito
+ex:"feat: adicionando registro de conhecimento em () a respeito de ()
+
+2- Códigos e exercícios práticos em determinadas linguagens
+ex: "feat adicionando exercício prático de conhecimento em () a respeito de  ()
+
+3- Mini-projetos de prototipagem de conhecimento  
+ex:"feat adicionando etapa () do mini projeto de prototipagem de conhecimento a respeito de ()
