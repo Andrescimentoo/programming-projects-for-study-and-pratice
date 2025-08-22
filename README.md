@@ -26,10 +26,10 @@ Portanto, é dessa maneira que arquitetei minha área de estudo: para que, assim
 commits a respeito de:
 
 1- Anotações de conhecimento e registro escrito
-ex:"feat: adicionando registro de conhecimento em () a respeito de ()
+ex:"feat: adding a knowledge entry about () regarding ()
 
 2- Códigos e exercícios práticos em determinadas linguagens
-ex: "feat adicionando exercício prático de conhecimento em () a respeito de  ()
+ex: "feat adding pratical knowledge exercise on () regarding ()
 
 3- Mini-projetos de prototipagem de conhecimento  
-ex:"feat adicionando etapa () do mini projeto de prototipagem de conhecimento a respeito de ()
+ex:"feat: adding () stage of the knowledge prototyping mini-project regarding () 
