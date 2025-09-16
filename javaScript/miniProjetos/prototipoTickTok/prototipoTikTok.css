@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+:root {
+    --color-black:#000 ;
+    --color-white: #fff;
+    --color-heart: #ff0050;
+    --color-text-light: rgba(225,255,255,0.8);
+    --color-text-dark: rgba(0,0,0,0.6);
+    --max-whidth:500px;
+    --header-heigth: 50px;
+    --footer-heigth:60px;
+}
