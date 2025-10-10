@@ -1,15 +1,260 @@
-*{
-    margin: 0;
-    padding:0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --color-black:#000 ;
-    --color-white: #fff;
-    --color-heart: #ff0050;
-    --color-text-light: rgba(225,255,255,0.8);
-    --color-text-dark: rgba(0,0,0,0.6);
-    --max-whidth:500px;
-    --header-heigth: 50px;
-    --footer-heigth:60px;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-heart: #ff0050;
+  --color-text-light: rgba(225,255,255,0.8);
+  --max-whidth: 500px;
+  --header-heigth: 50px;
+  --footer-heigth: 60px;
+  --video-area-height: calc(100vh - var(--header-heigth) - var(--footer-heigth));
+}
+
+
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  height: 100vh; /*O erro estava aqui, para fazer a divisão da largura da tela a medida no css tem que estar correta, estava widith inves de heigth*/
+  overflow: hidden;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Container central do app */
+.app-container {
+ position: relative;
+ height: 100vh;
+ width: 100%;
+ max-width: var(--max-whidth);
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+}
+
+/* HEADER - fixo e centralizado */
+.app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: var(--max-whidth);
+  background-color: var(--color-white);
+  z-index:10 ;
+  height: var(--header-heigth);
+
+}
+
+/* logo no header */
+.logo-container {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+.logo-tiktok {
+  height: 25px;
+}
+
+/* itens do header */
+.header-item {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-black);
+  cursor: pointer;
+  padding: 4rem;
+}
+.header-item-active {
+  color: var(--color-black);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Área de vídeos: rolagem apenas aqui */
+
+
+/* esconde scrollbar no Chrome */
+
+.videos-container {
+  flex: 1;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-top: var(--header-heigth);
+  height: calc(100vh - var(--header-heigth)-var(--footer-heigth));
+
+
+
+ 
+}
+
+/* Cada vídeo ocupa a área entre header e footer */
+.video-container {
+  position: relative;
+  height: 90%;
+  width: 100%;
+  scroll-snap-align: start;/*aperfeiçoa o scroll*/
+  scroll-snap-stop: always;
+
+}
+
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cobre toda área sem distorcer */
+  display: block;
+  z-index: 0;
+}
+
+/* correções para nomes de classes do HTML (video-infos vs video-info) */
+.video-infos,
+.video-info {
+  position: absolute;
+  bottom: 120px;
+  z-index: 10; /* acima do vídeo, abaixo do header */
+  color: var(--color-white);
+}
+.video-info {
+   left: 10px;
+   max-width: 70%;
+}
+
+/* informações do usuário */
+.video-user h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.video-user p {
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+/* sidebar (corresponde a .video-sidebar no HTML) */
+.video-sidebar {
+  position: absolute;
+  right: 10px;
+  bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* corrige plural vs singular: .sidebar-icons no HTML */
+.sidebar-icons,
+.sidebar-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-icons i,
+.sidebar-icon i {
+  font-size: 28px;
+  margin-bottom: 5px;
+  background-color: rgba(0,0,0,0.6);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* FOOTER - fixo e centralizado */
+.app-fotter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--max-whidth);
+  height: var(--footer-heigth);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: rgba(0,0,0,0.9);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  z-index: 9999; /* garante ficar acima dos vídeos */
+  cursor: pointer;
+}
+
+/* corrige nome: footer-item (HTML) */
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  color: rgba(225,255,255,0.6);
+}
+
+.footer-item i {
+  font-size: 20px;
+  margin-bottom: 3px;
 }
