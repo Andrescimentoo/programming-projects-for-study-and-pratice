@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.component-convert-values {
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    background-color: rgb(169, 197, 183);
+    width: 30%;
+    height: 10%;
+    border-radius: 2rem;
+
+}
