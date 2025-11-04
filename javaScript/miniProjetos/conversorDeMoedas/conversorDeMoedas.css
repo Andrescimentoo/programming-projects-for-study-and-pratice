@@ -1,20 +1,120 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-section{
+
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    
 }
+
 .component-convert-values {
     display: flex;
     flex-direction: column;
-    align-items:center ;
-    background-color: rgb(169, 197, 183);
-    width: 30%;
-    height: 10%;
-    border-radius: 2rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 700px;
+    padding: 14rem 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
 
+.component-convert-values:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #00ffb3;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 255, 179, 0.5);
+}
+
+.typeCurrency {
+    background-color: rgba(3, 3, 3, 0.15);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1.2rem;
+    width: 70%;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.typeCurrency:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+}
+
+.input-value {
+    width: 70%;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    color: #333;
+}
+
+.convert-value,
+.converted-value {
+    margin: 0.4rem 0;
+    font-size: 1.5rem;
+    color: #000000;
+    font-weight: 700;
+}
+
+#button-to-convert {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #00ffb3;
+    color: #0f2027;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+#button-to-convert:hover {
+    background-color: #00e6a5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 255, 179, 0.3);
+}
+.img-br, .img-EUA{
+    width: 100px;
+    height: 75px;
+}
+.interface-to-convertion{
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    width: 16rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
 }
