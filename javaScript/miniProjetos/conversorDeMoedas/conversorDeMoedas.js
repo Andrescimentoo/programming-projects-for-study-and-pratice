@@ -3,7 +3,7 @@
 const buttonToConvert = document.getElementById('button-to-convert') 
 
 const currrencyConverter = () => {
-     const typeCurrency = document.querySelector('.selecTypeCurrency')
+     const selectTypeCurrency = document.querySelector('.selecTypeCurrency')
      const inputValue = document.querySelector('.input-value').value
      const currencyValueToConvert = document.querySelector('.convert-value') // espaço onde o avlor vai ser renderizado 
      const convertedValue = document.querySelector('.converted-value')
