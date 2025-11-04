@@ -1,29 +1,72 @@
  // input capturado para nosso js entender e capturar o valor digitado pelo user 
-const buttonToConvert = document.getElementById('button-to-convert') // botão que disparará nossa função
-const convertedValue = document.querySelector('.converted-value')
-const convertValue = document.querySelector('.convert-value')
+// botão que disparará nossa função
+const buttonToConvert = document.getElementById('button-to-convert') 
 
 const currrencyConverter = () => {
+     const typeCurrency = document.querySelector('.typeCurrency')
      const inputValue = document.querySelector('.input-value').value
-     const dollarToDay = 7.5
-     const currencyValue = convertValue.innerHTML = inputValue
+     const currencyValueToConvert = document.querySelector('.convert-value') // espaço onde o avlor vai ser renderizado 
+     const convertedValue = document.querySelector('.converted-value')
+     const currencyIcon = document.getElementById('imgIcon')
      
-     const convertValues = Math.round(currencyValue / dollarToDay)// valor digitado dividido pelo dollar hoje  "Intl.NumberFormat" API para melhorar o código
-     convertedValue.innerHTML = convertValues
+     
+     const typeCurrencyValue = typeCurrency.value
+         
+     if(typeCurrencyValue === 'Dollar') {
+          const dollarToDay = 5.38
+          const convertValues = Math.round(inputValue / dollarToDay)
+          
+          currencyValueToConvert.innerHTML = new Intl.NumberFormat("de-DE",
+               { style: "currency",
+                 currency: "BRL" 
+               }).format(inputValue)
+          
+          convertedValue.innerHTML = new Intl.NumberFormat("de-DE",
+               { style: "currency",
+                 currency: "USD" 
+               }).format(convertValues)
+             
 
+     }
+     if(typeCurrencyValue === 'Euro') {
+          const euroToDay = 6.23
+          const convertValues = Math.round(inputValue / euroToDay)
+          
+          currencyValueToConvert.innerHTML = new Intl.NumberFormat('de-DE',{
+                 style: 'currency',
+                 currency: 'BRL' 
+               }).format(inputValue)
+          
+          convertedValue.innerHTML = new Intl.NumberFormat("de-DE",{
+                 style: "currency",
+                 currency: "EUR" 
+               }).format(convertValues) 
 
+     }
+     const changeIconCurrency = () => {
+         if(typeCurrencyValue === 'Dollar'){
+          currencyIcon.src = './assets/imgEUA.png'
+         }
+         if(typeCurrencyValue === 'Euro'){
+          currencyIcon.src = './assets/Euro.png' 
+         }
+          
+     }
+     typeCurrency.addEventListener('change',changeIconCurrency) // precisei pegar o typoeCurrency lá em cima pq eu precissava d 2 operações nele, uma com .value e uma pra usar o querySelector/DOM 
+    }
 
-
-
-     // melhorar o Css e os nomes das variaveis
-     // "desmockar" a variavel dollarToDay
-     // adicionar formatação mais profissionall e precisa Int.NumberFormat   
-
+ 
+ buttonToConvert.addEventListener('click',currrencyConverter)
     
-     console.log(convertValues)
-}   
+ 
 
-buttonToConvert.addEventListener('click',currrencyConverter)
+
+
+
+
+ //to tentando renderizar cotrretamente os icons dos paises da moeda de acordo com a preferencia do usuario. tem sido desafiador controlar as mudanças de estado e eventos
+ // porém muito incriveis 
+
 
 // Aprendi sem querer uma joia valiosa no código de hoje. o JavaScript para operadores segue a regra da ordem de precedencia
 //onde idependentemente de tudo ele lê o que é mais importante primeiro.
@@ -49,3 +92,9 @@ buttonToConvert.addEventListener('click',currrencyConverter)
 // usei o DOM para acessar a arvore de elementos do meu html e pegar componenetes e valores de componentes específicos, como também usei métodos e propriedades do javaScript
 // e do DOM para guiar a lógica do código. Além de fazer parte da minha lógica conceitos já dominados há bastante tempo, como declaração e instanciamneto de funções
 // e compreensão do hosting (ordem de como o js roda o código)   
+
+
+
+
+
+// oq vc quer fazer andré? pegar o valor digitado, renderizar ele no componente p dps dividir ele pelo dollar
