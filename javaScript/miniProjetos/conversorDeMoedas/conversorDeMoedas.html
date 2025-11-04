@@ -11,9 +11,32 @@
      <!--  input do valor a digitar/ valor em reais / valor convertido + botão -->   
        <section  class="component-convert-values">
             <h1>Conversor de moedas$</h1>
+               
+            <select name="" class="typeCurrency">
+               <option class="optionEuro">Euro</option>   
+               <option class="optionDollar">Dollar</option>   
+            </select>
+                  
+            
             <input class="input-value" type="text" placeholder="insira um valor">
-            <p class="convert-value">valor em reais: </p>
-            <p class="converted-value">valor convertido:</p>
+            
+            
+           
+                   
+            <div class="interface-to-convertion">
+              <img class="img-br" src="./assets/logoBr.png" alt="img Brasil moeda">
+              <p class="convert-value">valor em reais:</p>
+
+              <img id="imgIcon" class="img-EUA" src="./assets/imgEUA.png" alt="">
+             
+              <p class="converted-value">valor convertido:</p>
+            </div>
+             
+                
+            
+            
+            
+            
             <button id="button-to-convert">converter</button>
        </section>               
 </body>
