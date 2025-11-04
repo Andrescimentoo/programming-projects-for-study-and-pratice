@@ -10,7 +10,7 @@ const currrencyConverter = () => {
      const currencyIcon = document.getElementById('imgIcon')
      
      
-     const typeCurrencyValue = typeCurrency.value
+     const typeCurrencyValue = selectTypeCurrency.value
          
      if(typeCurrencyValue === 'Dollar') {
           const dollarToDay = 5.38
